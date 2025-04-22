@@ -1,0 +1,154 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Norwester&family=Roboto:wght@300;400;500&display=swap');
+
+/* Style the entire page */
+body {
+    background: linear-gradient(to right, #2c3e50, #4ca1af); /* Dark, sophisticated gradient */
+    font-family: 'Roboto', sans-serif; /* Clean, modern font for body text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #ecf0f1; /* Light text color for contrast */
+}
+
+/* Use Norwester for titles */
+h1 {
+    font-family: 'Norwester', sans-serif;
+    color: #ecf0f1;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Style the container */
+.container {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white for a glassmorphism effect */
+    backdrop-filter: blur(10px); /* Blurred background for depth */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px); /* Slight lift on hover for interactivity */
+}
+
+/* Style labels */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #ecf0f1;
+}
+
+/* Style input fields, textarea, and select */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ecf0f1;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+    outline: none;
+}
+
+/* Style file input */
+input[type="file"] {
+    margin-bottom: 20px;
+    color: #ecf0f1;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+    background: linear-gradient(to right, #ff6b6b, #feca57);
+    color: #2c3e50;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="submit"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+/* Style the note in index.html */
+.note {
+    font-size: 0.9em;
+    color: #bdc3c7;
+    margin-top: 20px;
+}
+
+/* Style the message on results page */
+.message {
+    font-size: 1.2em;
+    color: #ecf0f1;
+    margin-bottom: 25px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Style the back button on results page */
+.button {
+    display: inline-block;
+    background: linear-gradient(to right, #ff6b6b, #feca57);
+    color: #2c3e50;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+}

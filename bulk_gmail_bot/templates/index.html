@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Gmail Bot</title>
+    <!-- Link to Norwester font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Norwester&display=swap" rel="stylesheet">
+    <!-- Link to the CSS file using Flask's url_for -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bulk Gmail Bot</h1>
+        <p>Welcome to the Bulk Gmail Bot. Please fill in the form below to send emails in bulk. Make sure your file contains a column with email addresses and optionally a 'Name' column for personalization.</p>
+        <form action="/send_emails" method="post" enctype="multipart/form-data">
+            <!-- File upload section -->
+            <label for="file">Upload File:</label>
+            <input type="file" id="file" name="file" accept=".xlsx, .csv" required><br><br>
+
+            <label for="file_type">File Type:</label>
+            <select id="file_type" name="file_type">
+                <option value="excel">Excel (.xlsx)</option>
+                <option value="csv">CSV (.csv)</option>
+            </select><br><br>
+
+            <label for="email_column">Email Column Name:</label>
+            <input type="text" id="email_column" name="email_column" required><br><br>
+
+            <!-- Email content section -->
+            <label for="subject">Email Subject:</label>
+            <input type="text" id="subject" name="subject" required><br><br>
+
+            <label for="body">Email Body:</label><br>
+            <textarea id="body" name="body" rows="5" cols="50" placeholder="Use {name} to personalize with recipient's name" required></textarea><br><br>
+
+            <!-- Sending limit section -->
+            <label for="daily_limit">Daily Sending Limit (max 500):</label>
+            <input type="number" id="daily_limit" name="daily_limit" min="1" max="500" required><br><br>
+
+            <!-- Credentials section -->
+            <label for="gmail_user">Gmail Username:</label>
+            <input type="email" id="gmail_user" name="gmail_user" required><br><br>
+
+            <label for="gmail_password">Gmail Password:</label>
+            <input type="password" id="gmail_password" name="gmail_password" required><br><br>
+
+            <!-- Submit button -->
+            <input type="submit" value="Send Emails">
+        </form>
+        <!-- Styled note -->
+        <p class="note"><small>Note: Your Gmail credentials are used to authenticate with the SMTP server. They are not stored and are only used for this session.</small></p>
+    </div>
+</body>
+</html>

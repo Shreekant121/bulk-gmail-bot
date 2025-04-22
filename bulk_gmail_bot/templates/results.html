@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Results</title>
+    <!-- Link to Norwester font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Norwester&display=swap" rel="stylesheet">
+    <!-- Link to the CSS file using Flask's url_for -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Email Sending Results</h1>
+        <p class="message">{{ message }}</p>
+        <a href="/" class="button">Back to Home</a>
+    </div>
+</body>
+</html>
